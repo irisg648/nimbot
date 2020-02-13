@@ -13,4 +13,4 @@ async def play_nim(ctx):
     await ctx.send("Still working on it, kiddo.")
 
 bot.run(token)
-
+# this is cool I guess - Iris
