@@ -1,5 +1,6 @@
 import os
 import random
+import math
 
 from discord.ext import commands
 from dotenv import load_dotenv
@@ -18,8 +19,8 @@ async def flip_coin(ctx):
     await ctx.send(random.choice(["Heads", "Tails"]))
 
 @bot.command(name="average")
-async def average(ctx, a, b):
-    await ctx.send( (a+b)/2 )
+async def average(ctx, *args):
+    await ctx.send( sum(args)/2 )
 
 bot.run(token)
 # this is cool I guess - Iris
