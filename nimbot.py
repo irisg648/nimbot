@@ -22,5 +22,28 @@ async def flip_coin(ctx):
 async def average(ctx, *args):
     await ctx.send( sum(args)/2 )
 
+@bot.command(name="birthday_color")
+async def birthday_color(ctx, month):
+    month = month.lower()
+    unwanted = "!@#$%^&*(),./[]"
+    colors = {"january": "Brown", 
+              "feburary": "Purple", 
+              "march": "Baby Blue", 
+              "april": "Light Red",
+              "may": "Green",
+              "june": "Yellow",
+              "july": "Pink",
+              "august": "Orange",
+              "september": "Navy Blue",
+              "october": "Light Blue",
+              "november": "Maroon",
+              "december": "Bayou"}
+    for char in unwanted:
+        month = month.replace(char, "")              
+    if month not in colors.keys():
+        await ctx.send("Please use a valid month.")
+    else:
+        await ctx.send(colors[month])
+
 bot.run(token)
 # this is cool I guess - Iris
